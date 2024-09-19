@@ -1,0 +1,105 @@
+{
+  "project_info": {
+    "project_number": "773823191130",
+    "project_id": "test-dc683",
+    "storage_bucket": "test-dc683.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:773823191130:android:2d2833f665f9627770e063",
+        "android_client_info": {
+          "package_name": "com.androidreactnativeproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdfFojnmBSdWP2GAT443X8z50vxDxzQ9A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:773823191130:android:6b40c68b74f8ef2470e063",
+        "android_client_info": {
+          "package_name": "com.example.demoflutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdfFojnmBSdWP2GAT443X8z50vxDxzQ9A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:773823191130:android:f14d357f2db02fe770e063",
+        "android_client_info": {
+          "package_name": "com.example.flutter_push_demo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdfFojnmBSdWP2GAT443X8z50vxDxzQ9A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:773823191130:android:a2da460efb0eaa2d70e063",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdfFojnmBSdWP2GAT443X8z50vxDxzQ9A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:773823191130:android:6e9b5423c5dce45f70e063",
+        "android_client_info": {
+          "package_name": "com.example.tarush_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdfFojnmBSdWP2GAT443X8z50vxDxzQ9A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
