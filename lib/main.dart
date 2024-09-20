@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:moengage_flutter/moengage_flutter.dart';
+import 'dart:async';
+
 void main() {
   runApp(const MyApp());
 }
@@ -13,21 +15,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
@@ -39,69 +26,52 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
   final String title;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
 
 
-  int _counter = 0;
+        
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
+  final MoEngageFlutter _moengagePlugin =
+      MoEngageFlutter("Z1UDNSWJALFR3UTPWWMCSF5Z");
+
+
+  @override
+  void initState() {
+    super.initState();
+    initPlatformState();
+    WidgetsBinding.instance.addObserver(this as WidgetsBindingObserver);
+    debugPrint('$tag initState() : start ');
+    _moengagePlugin.configureLogs(LogLevel.VERBOSE);
+
+    _moengagePlugin.initialise();
+  
+    debugPrint('initState() : end ');
   }
 
-
-
-    final MoEngageFlutter _moengagePlugin = MoEngageFlutter(
-      "Z1UDNSWJALFR3UTPWWMCSF5Z",
-      moEInitConfig: MoEInitConfig(
-          pushConfig: PushConfig.defaultConfig()));
-
-	  void _OnPushClick(PushCampaignData message) {
-      debugPrint(message.toString());
-    }
-
-    void _onPushTokenGenerated(PushTokenData pushToken) {
-    debugPrint(
-        '$tag Main : _onPushTokenGenerated() : This is callback on push token generated from native to flutter: PushToken: $pushToken');
+  Future<void> initPlatformState() async {
+    if (!mounted) return;
+    //Push.getTokenStream.listen(_onTokenEvent, onError: _onTokenError);
   }
+  final int _counter = 0;
 
-  void _permissionCallbackHandler(PermissionResultData data) {
-    debugPrint('$tag Permission Result: $data');
-  }
-
-
-    @override
-    void initState() {
-      super.initState();
-      //initPlatformState();
-      _moengagePlugin.configureLogs(LogLevel.VERBOSE);
-      _moengagePlugin.setPushClickCallbackHandler(_OnPushClick);
-      _moengagePlugin.setPushTokenCallbackHandler(_onPushTokenGenerated);
-      _moengagePlugin.setPermissionCallbackHandler(_permissionCallbackHandler);   
-      _moengagePlugin.initialise();
-      _moengagePlugin.requestPushPermissionAndroid();
-    }
+  // void _startGeofenceMonitoring() {
+  //   setState(() {
+  //     // This call to setState tells the Flutter framework that something has
+  //     // changed in this State, which causes it to rerun the build method below
+  //     // so that the display can reflect the updated values. If we changed
+  //     // _counter without calling setState(), then the build method would not be
+  //     // called again, and so nothing would appear to happen.
+  //     //_counter++;
+  //     debugPrint('Start GeoFence Monitoring - Flutter');
+     
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -140,21 +110,33 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            OutlinedButton(
+              style: OutlinedButton.styleFrom(
+                  foregroundColor: Colors.blue,
+                ),
+              onPressed: () { 	
+                //_moengagePlugin.setAlias("Flutter One1"); 
+                _moengagePlugin.setUniqueId("Flutter One1");
+                },
+              child: Text('Click to set your unique Id or profile on MoEn dashboard'),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+
+            OutlinedButton(
+              style: OutlinedButton.styleFrom(
+                  foregroundColor: Colors.blue,
+                ),
+              onPressed: () { 	
+                	_moengagePlugin.setFirstName("Tony Stark");
+                  _moengagePlugin.setPhoneNumber("8894");
+                  var marvelproperties = MoEProperties();
+                  marvelproperties.addAttribute("TonyStark", "Robert Downey");
+                  _moengagePlugin.trackEvent("MarvelMutliverse",marvelproperties);
+                },
+              child: Text('Click to track user attributes and events in flutter MoE'),
+            )
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      )
     );
   }
 }
