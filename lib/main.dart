@@ -81,6 +81,15 @@ class _MyHomePageState extends State<MyHomePage> {
       debugPrint(message.toString());
     }
 
+    void _onPushTokenGenerated(PushTokenData pushToken) {
+    debugPrint(
+        '$tag Main : _onPushTokenGenerated() : This is callback on push token generated from native to flutter: PushToken: $pushToken');
+  }
+
+  void _permissionCallbackHandler(PermissionResultData data) {
+    debugPrint('$tag Permission Result: $data');
+  }
+
 
     @override
     void initState() {
@@ -88,6 +97,8 @@ class _MyHomePageState extends State<MyHomePage> {
       //initPlatformState();
       _moengagePlugin.configureLogs(LogLevel.VERBOSE);
       _moengagePlugin.setPushClickCallbackHandler(_OnPushClick);
+      _moengagePlugin.setPushTokenCallbackHandler(_onPushTokenGenerated);
+      _moengagePlugin.setPermissionCallbackHandler(_permissionCallbackHandler);   
       _moengagePlugin.initialise();
       _moengagePlugin.requestPushPermissionAndroid();
     }
