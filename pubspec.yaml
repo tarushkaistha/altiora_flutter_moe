@@ -28,7 +28,9 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  fluttertoast: ^8.2.8
   moengage_flutter: ^8.0.0
+  moengage_inbox: ^7.0.0
   flutter:
     sdk: flutter
 

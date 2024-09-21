@@ -68,6 +68,8 @@ flutter {
 
 dependencies{
     implementation("com.moengage:moe-android-sdk:13.03.00")
+    implementation("com.moengage:inbox-core:3.1.0")
+    implementation("com.moengage:inbox-ui:3.1.0")
     implementation("androidx.core:core:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.lifecycle:lifecycle-process:2.7.0")
