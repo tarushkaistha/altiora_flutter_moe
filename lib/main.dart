@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:moengage_flutter/moengage_flutter.dart';
-	import 'package:moengage_inbox/moengage_inbox.dart';
-  import 'package:fluttertoast/fluttertoast.dart';
+import 'package:moengage_inbox/moengage_inbox.dart';
+import 'package:moengage_cards/moengage_cards.dart' as moe;
+import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:async';
 
 void main() {
@@ -36,24 +37,12 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
 
-
-  void _onInAppClick(ClickData message) {
-    debugPrint("in-app click data : $message");
-  }
- 
-  void _onInAppShown(InAppData message) {
-    debugPrint("in-app shown data : $message");
-  }
- 
-  void _onInAppDismiss(InAppData message) {
-    debugPrint("in-app dismiss data : $message");
-  }
-
   final MoEngageFlutter _moengagePlugin =
       MoEngageFlutter("Z1UDNSWJALFR3UTPWWMCSF5Z");
 
   final	MoEngageInbox _moEngageInbox = MoEngageInbox("Z1UDNSWJALFR3UTPWWMCSF5Z");
 
+  moe.MoEngageCards cards = moe.MoEngageCards("Z1UDNSWJALFR3UTPWWMCSF5Z");
 
 
   @override
@@ -64,17 +53,9 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
     debugPrint('$tag initState() : start ');
     _moengagePlugin.configureLogs(LogLevel.VERBOSE);
 
-    _moengagePlugin.setInAppClickHandler(_onInAppClick);
-    _moengagePlugin.setInAppShownCallbackHandler(_onInAppShown);
-    _moengagePlugin.setInAppDismissedCallbackHandler(_onInAppDismiss);
-
     _moengagePlugin.initialise();
 
-    _moengagePlugin.setCurrentContext(["abc"]);
-
-    // _moengagePlugin.showInApp();
-
-    _moengagePlugin.showNudge();
+    cards.initialize();
   
     debugPrint('initState() : end ');
   }

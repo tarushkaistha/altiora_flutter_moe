@@ -31,6 +31,7 @@ dependencies:
   fluttertoast: ^8.2.8
   moengage_flutter: ^8.0.0
   moengage_inbox: ^7.0.0
+  moengage_cards: ^4.0.0
   flutter:
     sdk: flutter
 

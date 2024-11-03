@@ -144,6 +144,38 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.12.0"
+  moengage_cards:
+    dependency: "direct main"
+    description:
+      name: moengage_cards
+      sha256: a9a68cf37b7f25c55959546a1fe6eaae4b51d815d8e9dc954254d370fb47e592
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.0.0"
+  moengage_cards_android:
+    dependency: transitive
+    description:
+      name: moengage_cards_android
+      sha256: "38b1daea84623a2ab1354399b535a74ddf62ba04450f1be8c4c57f9cdfe7e1b6"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0"
+  moengage_cards_ios:
+    dependency: transitive
+    description:
+      name: moengage_cards_ios
+      sha256: bb34c37d7a639b43697316726438599a7a16070ce92ab0f63815566c965b00ea
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.1"
+  moengage_cards_platform_interface:
+    dependency: transitive
+    description:
+      name: moengage_cards_platform_interface
+      sha256: "0e524d022ff15de835cebf461816c50e111b677dc7197b885519d35c836e1a70"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0"
   moengage_flutter:
     dependency: "direct main"
     description:
