@@ -10,6 +10,7 @@ import io.flutter.app.FlutterApplication
 
 class MyApplication : FlutterApplication() {
 
+    //    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate() {
         super.onCreate()
         val moEngage: MoEngage.Builder =
@@ -21,6 +22,19 @@ class MyApplication : FlutterApplication() {
                     )
                 ).configureLogs(LogConfig(LogLevel.VERBOSE, true))
         MoEInitializer.initialiseDefaultInstance(applicationContext, moEngage)
+
+
+//        createCustomNotificationChannel("abc")
     }
+
+//    @RequiresApi(Build.VERSION_CODES.O)
+//    private fun createCustomNotificationChannel(channelName: String) {
+//        val channel =
+//            NotificationChannel(channelName, channelName, NotificationManager.IMPORTANCE_HIGH)
+//
+//
+//        val manager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+//        manager.createNotificationChannel(channel)
+//    }
 
 }
