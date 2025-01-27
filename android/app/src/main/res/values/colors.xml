@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="moe_rich_push_progress_bar_background_color">#DE1818</color>
+    <color name="moe_rich_push_progress_bar_progress_color">#32EF1D</color>
+
+
+</resources>

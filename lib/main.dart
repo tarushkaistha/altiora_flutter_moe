@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:moengage_flutter/moengage_flutter.dart';
-	import 'package:moengage_inbox/moengage_inbox.dart';
+	// import 'package:moengage_inbox/moengage_inbox.dart';
   import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:async';
+import 'dart:developer';
 
 void main() {
   runApp(const MyApp());
@@ -42,8 +43,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
   final MoEngageFlutter _moengagePlugin =
       MoEngageFlutter("Z1UDNSWJALFR3UTPWWMCSF5Z");
 
-  final	MoEngageInbox _moEngageInbox = MoEngageInbox("Z1UDNSWJALFR3UTPWWMCSF5Z");
-
+  // final	MoEngageInbox _moEngageInbox = MoEngageInbox("Z1UDNSWJALFR3UTPWWMCSF5Z");
 
   @override
   void initState() {
@@ -139,95 +139,95 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
               child: const Text('Click to track user attributes and events in flutter MoE'),
             ),
 
-            OutlinedButton(
-              style: OutlinedButton.styleFrom(
-                  foregroundColor: Colors.blue,
-                ),
-              onPressed: () async{ 	
-                	InboxData? data = await _moEngageInbox.fetchAllMessages();
-                  if(data != null){
-                    print("my inbox data : $data");
-                    if(data.messages.isNotEmpty){
-                        for(final InboxMessage message in data.messages){
-                          print("notifications in my inbox with following messages : $message");
-                        }
-                    }
-                  }
-                },
-              child: const Text('Click to get all push notifications in your inbox'),
-            ),
-            OutlinedButton(
-              style: OutlinedButton.styleFrom(
-                  foregroundColor: Colors.blue,
-                ),
-              onPressed: () async{ 	
-                	InboxData? data = await _moEngageInbox.fetchAllMessages();
-                  if(data != null){
-                    print("my inbox data : $data");
-                    if(data.messages.isNotEmpty){
-                        for(final InboxMessage message in data.messages){
-                          print("clicked notifications in my inbox with following messages : $message");
-                          _moEngageInbox.trackMessageClicked(message);
-                        }
-                    }
-                  }
-                },
-              child: const Text('Click to track push notifications on MoE db'),
-            ),
-            OutlinedButton(
-              style: OutlinedButton.styleFrom(
-                  foregroundColor: Colors.blue,
-                ),
-              onPressed: () async{ 	
-                	int count = await _moEngageInbox.getUnClickedCount();
-                  print("i have these much uncklicked notifications : $count");
-                  Fluttertoast.showToast(
-                    msg: "i have these much uncklicked notifications : $count",
-                    toastLength: Toast.LENGTH_SHORT,
-                    gravity: ToastGravity.BOTTOM,
-                    timeInSecForIosWeb: 1,
-                    backgroundColor: Colors.red,
-                    textColor: Colors.white,
-                    fontSize: 12.0
-                  );
-                },
-              child: const Text('Click to get unclicked push notifications'),
-            ),
-            OutlinedButton(
-              style: OutlinedButton.styleFrom(
-                  foregroundColor: Colors.blue,
-                ),
-              onPressed: () async{ 	
-                	InboxData? data = await _moEngageInbox.fetchAllMessages();
-                  if(data!.messages.isNotEmpty){
-                        for(final InboxMessage message in data.messages){
-                          print("deleted notifications in my inbox : $message");
-                          _moEngageInbox.deleteMessage(message);
-                          Fluttertoast.showToast(
-                            msg: "deleted notification(s) : $message",
-                            toastLength: Toast.LENGTH_SHORT,
-                            gravity: ToastGravity.BOTTOM,
-                            timeInSecForIosWeb: 1,
-                            backgroundColor: Colors.blue,
-                            textColor: Colors.white,
-                            fontSize: 12.0
-                          );
-                        }
-                    }
-                    else {
-                      Fluttertoast.showToast(
-                            msg: "add push notifications in inbox to delete : ${data.messages.length}",
-                            toastLength: Toast.LENGTH_SHORT,
-                            gravity: ToastGravity.BOTTOM,
-                            timeInSecForIosWeb: 1,
-                            backgroundColor: Colors.amberAccent,
-                            textColor: Colors.white,
-                            fontSize: 12.0
-                          );
-                    }
-                },
-              child: const Text('Click to delete push notifications from your inbox'),
-            )
+            // OutlinedButton(
+            //   style: OutlinedButton.styleFrom(
+            //       foregroundColor: Colors.blue,
+            //     ),
+            //   onPressed: () async{ 	
+            //     	InboxData? data = await _moEngageInbox.fetchAllMessages();
+            //       if(data != null){
+            //         print("my inbox data : $data");
+            //         if(data.messages.isNotEmpty){
+            //             for(final InboxMessage message in data.messages){
+            //               print("notifications in my inbox with following messages : $message");
+            //             }
+            //         }
+            //       }
+            //     },
+            //   child: const Text('Click to get all push notifications in your inbox'),
+            // ),
+            // OutlinedButton(
+            //   style: OutlinedButton.styleFrom(
+            //       foregroundColor: Colors.blue,
+            //     ),
+            //   onPressed: () async{ 	
+            //     	InboxData? data = await _moEngageInbox.fetchAllMessages();
+            //       if(data != null){
+            //         print("my inbox data : $data");
+            //         if(data.messages.isNotEmpty){
+            //             for(final InboxMessage message in data.messages){
+            //               print("clicked notifications in my inbox with following messages : $message");
+            //               _moEngageInbox.trackMessageClicked(message);
+            //             }
+            //         }
+            //       }
+            //     },
+            //   child: const Text('Click to track push notifications on MoE db'),
+            // ),
+            // OutlinedButton(
+            //   style: OutlinedButton.styleFrom(
+            //       foregroundColor: Colors.blue,
+            //     ),
+            //   onPressed: () async{ 	
+            //     	int count = await _moEngageInbox.getUnClickedCount();
+            //       print("i have these much uncklicked notifications : $count");
+            //       Fluttertoast.showToast(
+            //         msg: "i have these much uncklicked notifications : $count",
+            //         toastLength: Toast.LENGTH_SHORT,
+            //         gravity: ToastGravity.BOTTOM,
+            //         timeInSecForIosWeb: 1,
+            //         backgroundColor: Colors.red,
+            //         textColor: Colors.white,
+            //         fontSize: 12.0
+            //       );
+            //     },
+            //   child: const Text('Click to get unclicked push notifications'),
+            // ),
+            // OutlinedButton(
+            //   style: OutlinedButton.styleFrom(
+            //       foregroundColor: Colors.blue,
+            //     ),
+            //   onPressed: () async{ 	
+            //     	InboxData? data = await _moEngageInbox.fetchAllMessages();
+            //       if(data!.messages.isNotEmpty){
+            //             for(final InboxMessage message in data.messages){
+            //               print("deleted notifications in my inbox : $message");
+            //               _moEngageInbox.deleteMessage(message);
+            //               Fluttertoast.showToast(
+            //                 msg: "deleted notification(s) : $message",
+            //                 toastLength: Toast.LENGTH_SHORT,
+            //                 gravity: ToastGravity.BOTTOM,
+            //                 timeInSecForIosWeb: 1,
+            //                 backgroundColor: Colors.blue,
+            //                 textColor: Colors.white,
+            //                 fontSize: 12.0
+            //               );
+            //             }
+            //         }
+            //         else {
+            //           Fluttertoast.showToast(
+            //                 msg: "add push notifications in inbox to delete : ${data.messages.length}",
+            //                 toastLength: Toast.LENGTH_SHORT,
+            //                 gravity: ToastGravity.BOTTOM,
+            //                 timeInSecForIosWeb: 1,
+            //                 backgroundColor: Colors.amberAccent,
+            //                 textColor: Colors.white,
+            //                 fontSize: 12.0
+            //               );
+            //         }
+            //     },
+            //   child: const Text('Click to delete push notifications from your inbox'),
+            // )
           ],
         ),
       )
