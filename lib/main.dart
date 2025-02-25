@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:moengage_flutter/moengage_flutter.dart';
-	import 'package:moengage_inbox/moengage_inbox.dart';
-  import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:async';
 
 void main() {
@@ -39,6 +37,16 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
 
   void _onInAppClick(ClickData message) {
     debugPrint("in-app click data : $message");
+
+      String navigationUrl = "";
+      Map<String, dynamic> kvPairs = {};
+    if (message.action is NavigationAction) {
+    NavigationAction navAction = message.action as NavigationAction;
+    //navigationUrl = navigationAction.navigationUrl;
+    kvPairs = navAction.keyValuePairs;
+  }
+  //debugPrint("mOE Navigation URL is: $navigationUrl");
+  debugPrint("moe kv pairs : $kvPairs");
   }
  
   void _onInAppShown(InAppData message) {
