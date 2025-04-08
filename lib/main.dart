@@ -78,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
           pushConfig: PushConfig.defaultConfig()));
 
 	  void _OnPushClick(PushCampaignData message) {
-      debugPrint(message.toString());
+      debugPrint("moe push click : $message");
     }
 
     void _onPushTokenGenerated(PushTokenData pushToken) {

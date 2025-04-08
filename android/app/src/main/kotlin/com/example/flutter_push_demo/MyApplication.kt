@@ -6,6 +6,7 @@ import com.moengage.core.MoEngage
 import com.moengage.core.config.LogConfig
 import com.moengage.core.config.NotificationConfig
 import com.moengage.flutter.MoEInitializer
+import com.moengage.pushbase.MoEPushHelper
 import io.flutter.app.FlutterApplication
 
 class MyApplication : FlutterApplication() {
@@ -21,6 +22,8 @@ class MyApplication : FlutterApplication() {
                     )
                 ).configureLogs(LogConfig(LogLevel.VERBOSE, true))
         MoEInitializer.initialiseDefaultInstance(applicationContext, moEngage)
+
+        MoEPushHelper.getInstance().registerMessageListener(MyPluginPushCallback())
     }
 
 }
