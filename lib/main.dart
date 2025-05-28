@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:moengage_flutter/moengage_flutter.dart';
+import 'package:moengage_geofence/moengage_geofence.dart';
 import 'dart:async';
 
 void main() {
@@ -40,6 +41,8 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
   final MoEngageFlutter _moengagePlugin =
       MoEngageFlutter("Z1UDNSWJALFR3UTPWWMCSF5Z");
 
+  final MoEngageGeofence _moEngageGeofence = MoEngageGeofence("Z1UDNSWJALFR3UTPWWMCSF5Z");
+
 
   @override
   void initState() {
@@ -50,6 +53,8 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
     _moengagePlugin.configureLogs(LogLevel.VERBOSE);
 
     _moengagePlugin.initialise();
+
+    _moEngageGeofence.startGeofenceMonitoring();
   
     debugPrint('initState() : end ');
   }
@@ -131,6 +136,8 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
                   var marvelproperties = MoEProperties();
                   marvelproperties.addAttribute("TonyStark", "Robert Downey");
                   _moengagePlugin.trackEvent("MarvelMutliverse",marvelproperties);
+
+
                 },
               child: Text('Click to track user attributes and events in flutter MoE'),
             )

@@ -28,7 +28,8 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  moengage_flutter: ^8.0.0
+  moengage_flutter: 9.2.0
+  moengage_geofence: 5.2.0
   flutter:
     sdk: flutter
 

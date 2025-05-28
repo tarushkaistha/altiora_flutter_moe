@@ -140,42 +140,74 @@ packages:
     dependency: "direct main"
     description:
       name: moengage_flutter
-      sha256: f75c55db2a9ab31d59dd6b4c9424165090b839483342c3a30a764a722062cdfb
+      sha256: "0ee8137d97a813cdc8d8dacb8f1e6e4b5beb48406859c984bb83a241861c463e"
       url: "https://pub.dev"
     source: hosted
-    version: "8.0.0"
+    version: "9.2.0"
   moengage_flutter_android:
     dependency: transitive
     description:
       name: moengage_flutter_android
-      sha256: b23eb807af28c1e3fc920f4fb8590a85effe9c12a3731cbf13e7ef8cbbc5656e
+      sha256: "96e4aa4ae77253dc17de95491ab8eda6aaeec78ad3e941991aa22078bd0be0e3"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0"
+    version: "3.3.0"
   moengage_flutter_ios:
     dependency: transitive
     description:
       name: moengage_flutter_ios
-      sha256: "963aec60d62600bc8d9126792a12c6224d11ffc94239374808ba76b8ce921244"
+      sha256: "1e04903cdb1edd7c238b0a23d1cb0e94502586c9baae04a8e5b0b8bbb2bc6079"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0"
+    version: "3.3.0"
   moengage_flutter_platform_interface:
     dependency: transitive
     description:
       name: moengage_flutter_platform_interface
-      sha256: "41ba9b17a438b01b00a5660a7f9b37ca7748680e701abe6c58ae76e8af6b5b17"
+      sha256: e62d3f4544878fb9cb53a2e27efac485c7906250e95bb9ef2668f251f3da3f74
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0"
+    version: "3.2.0"
   moengage_flutter_web:
     dependency: transitive
     description:
       name: moengage_flutter_web
-      sha256: "98592912e2f4c4e912d168b581da8d390cbef83c30638fafde3a90606e1dbecd"
+      sha256: c3f0c467ebca58a9d62c3aeff54ea72f96e9b8ead685b8a5d09a3ef4c9205d80
       url: "https://pub.dev"
     source: hosted
-    version: "4.0.0"
+    version: "4.1.0"
+  moengage_geofence:
+    dependency: "direct main"
+    description:
+      name: moengage_geofence
+      sha256: a0fc38407e3d8c8ad696cac279e226411ab871e9a681e38db7fa706b75989a58
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.2.0"
+  moengage_geofence_android:
+    dependency: transitive
+    description:
+      name: moengage_geofence_android
+      sha256: f05a9afa3041fa43f91e23a7633929eadcaf963d9ee2d43aeefdb951be0140fd
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.3.0"
+  moengage_geofence_ios:
+    dependency: transitive
+    description:
+      name: moengage_geofence_ios
+      sha256: "1e91d5676f84c1449e3e0f0f66e0537596c4f43a72771cd48a74676ce059406a"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.3.0"
+  moengage_geofence_platform_interface:
+    dependency: transitive
+    description:
+      name: moengage_geofence_platform_interface
+      sha256: "422ae8978987003fd70647bf4545aefc07faf5bd19970438806abb848598edff"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.2"
   path:
     dependency: transitive
     description:
