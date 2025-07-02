@@ -23,7 +23,7 @@ class MyApplication : FlutterApplication() {
                 ).configureLogs(LogConfig(LogLevel.VERBOSE, true))
         MoEInitializer.initialiseDefaultInstance(applicationContext, moEngage)
 
-        MoEPushHelper.getInstance().registerMessageListener(MyPluginPushCallback())
+//        MoEPushHelper.getInstance().registerMessageListener(MyPluginPushCallback())
     }
 
 }
