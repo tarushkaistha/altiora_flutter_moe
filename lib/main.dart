@@ -42,11 +42,11 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
       Map<String, dynamic> kvPairs = {};
     if (message.action is NavigationAction) {
     NavigationAction navAction = message.action as NavigationAction;
-    //navigationUrl = navigationAction.navigationUrl;
-    kvPairs = navAction.keyValuePairs;
+    navigationUrl = navAction.navigationUrl;
+    // kvPairs = navAction.keyValuePairs;
   }
-  //debugPrint("mOE Navigation URL is: $navigationUrl");
-  debugPrint("moe kv pairs : $kvPairs");
+  debugPrint("mOE Navigation URL is: $navigationUrl");
+  // debugPrint("moe kv pairs : $kvPairs");
   }
  
   void _onInAppShown(InAppData message) {
