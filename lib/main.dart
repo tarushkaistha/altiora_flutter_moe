@@ -100,6 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
       _moengagePlugin.setPushTokenCallbackHandler(_onPushTokenGenerated);
       _moengagePlugin.setPermissionCallbackHandler(_permissionCallbackHandler);   
       _moengagePlugin.initialise();
+      _moengagePlugin.enableAdIdTracking();
       _moengagePlugin.requestPushPermissionAndroid();
     }
 
