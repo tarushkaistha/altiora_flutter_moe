@@ -73,9 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
     final MoEngageFlutter _moengagePlugin = MoEngageFlutter(
-      "Z1UDNSWJALFR3UTPWWMCSF5Z",
-      moEInitConfig: MoEInitConfig(
-          pushConfig: PushConfig.defaultConfig()));
+      "Z1UDNSWJALFR3UTPWWMCSF5Z");
 
 	  void _OnPushClick(PushCampaignData message) {
       debugPrint("moe push click : $message");
